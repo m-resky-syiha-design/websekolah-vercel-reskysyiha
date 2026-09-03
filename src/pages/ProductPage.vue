@@ -1,0 +1,35 @@
+<script setup>
+import ProductCard from '../components/ProductCard.vue'
+const daftarProduk = [
+ { id: 1, nama: 'pred ferry', harga: 7500000, gambar:
+'data:image/jpeg;base64,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' },
+ { id: 2, nama: 'sepatu adidas', harga: 1000000, gambar:
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQb704-HyTM5Eobq-7j5SsKobBDpYvO4wDIsSr2qRJVaA&s=10' },
+ { id: 3, nama: 'sepatu pumaa', harga: 820000, gambar:
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcVp20W1T4DLCfxREEL6ClHoRTJrdfOxlz_AZt6ZJFtQ&s=10' },
+
+]
+</script>
+<template>
+ <main>
+ <h1>Produk Kami</h1>
+ <div class="grid">
+ <ProductCard
+
+ v-for="produk in daftarProduk"
+ :key="produk.id"
+ :nama="produk.nama"
+ :harga="produk.harga"
+ :gambar="produk.gambar"
+ />
+</div>
+ </main>
+</template>
+<style scoped>
+.grid {
+ display: flex;
+ gap:16px;
+ flex-wrap: wrap;
+ color:black
+}
+</style>
